@@ -41,7 +41,7 @@ export default function ResumePage() {
                 {personalDetails.fullName}
               </h1>
               <img
-                src="/images/profile.jpg"
+                src="/images/picture.JPEG"
                 alt={`${personalDetails.fullName} profile`}
                 className="w-20 h-20 rounded-full object-cover border border-slate-200 dark:border-slate-800 shadow-sm"
               />
