@@ -33,10 +33,9 @@ export const Footer = () => {
             <p className="text-sm text-slate-600 dark:text-slate-400 max-w-md leading-relaxed">
               Specializing in Informatics, full-stack software development, responsive web design, systems analysis, and enterprise architecture. Seeking internship and junior engineering opportunities.
             </p>
-            {/* Status pill */}
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-200 dark:border-emerald-800/60 text-emerald-700 dark:text-emerald-300 text-xs font-semibold">
               <CheckCircle2 className="w-3.5 h-3.5" />
-              <span>Vercel Deployment Ready • Available for Hire</span>
+              <span>Available for Junior & Internship Software developer Roles</span>
             </div>
           </div>
 
@@ -88,7 +87,7 @@ export const Footer = () => {
                 className="flex items-center gap-2 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
               >
                 <LinkedinIcon className="w-4 h-4" />
-                <span>LinkedIn Network</span>
+                <span className="truncate">{personalDetails.linkedin.replace(/^https?:\/\//, '').replace(/\/$/, '')}</span>
               </a>
               <a
                 href={`mailto:${personalDetails.email}`}

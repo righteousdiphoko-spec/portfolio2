@@ -36,10 +36,16 @@ export default function ResumePage() {
         {/* Header Block */}
         <header className="border-b-2 border-indigo-600 pb-6 mb-6">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-            <div>
+            <div className="flex items-center gap-4">
               <h1 className="text-3xl font-black tracking-tight text-slate-900 dark:text-slate-100 uppercase">
                 {personalDetails.fullName}
               </h1>
+              <img
+                src="/images/profile.jpg"
+                alt={`${personalDetails.fullName} profile`}
+                className="w-20 h-20 rounded-full object-cover border border-slate-200 dark:border-slate-800 shadow-sm"
+              />
+            </div>
               <div className="text-sm font-bold text-indigo-600 dark:text-indigo-400 mt-1">
                 {personalDetails.headline}
               </div>

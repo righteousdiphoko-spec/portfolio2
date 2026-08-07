@@ -9,7 +9,7 @@ export const personalDetails: PersonalDetails = {
   location: 'South Africa (Open to Local & International Remote Roles)',
   availability: 'Immediate / Junior & Internship Opportunities',
   bio: `Full Stack Developer Intern with a solid foundation in Information Systems, Informatics, and academic project engineering. Experienced in connecting complex user requirements with robust, scalable technical solutions. Demonstrates strong capabilities across frontend development, system analysis, process testing, database management, and technical documentation with a commitment to clean code and continuous growth.`,
-  github: 'https://github.com/righteousdiphoko/righteousdiphoko-spec',
+  github: 'https://github.com/righteousdiphoko-spec/portfolio2',
   linkedin: 'https://www.linkedin.com/in/tshiamo-diphoko-5a0965208/',
 };
 
