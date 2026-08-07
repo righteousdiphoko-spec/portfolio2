@@ -46,6 +46,7 @@ export default function ResumePage() {
                 className="w-20 h-20 rounded-full object-cover border border-slate-200 dark:border-slate-800 shadow-sm"
               />
             </div>
+            <div>
               <div className="text-sm font-bold text-indigo-600 dark:text-indigo-400 mt-1">
                 {personalDetails.headline}
               </div>
@@ -53,20 +54,20 @@ export default function ResumePage() {
                 Student No: {personalDetails.studentNumber}
               </div>
             </div>
+          </div>
 
-            <div className="text-xs space-y-1 text-slate-600 dark:text-slate-300 font-medium">
-              <div className="flex items-center gap-2">
-                <Mail className="w-3.5 h-3.5 text-indigo-600" />
-                <span>{personalDetails.email}</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Phone className="w-3.5 h-3.5 text-indigo-600" />
-                <span>{personalDetails.phone}</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <MapPin className="w-3.5 h-3.5 text-indigo-600" />
-                <span>{personalDetails.location}</span>
-              </div>
+          <div className="text-xs space-y-1 text-slate-600 dark:text-slate-300 font-medium mt-6">
+            <div className="flex items-center gap-2">
+              <Mail className="w-3.5 h-3.5 text-indigo-600" />
+              <span>{personalDetails.email}</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Phone className="w-3.5 h-3.5 text-indigo-600" />
+              <span>{personalDetails.phone}</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <MapPin className="w-3.5 h-3.5 text-indigo-600" />
+              <span>{personalDetails.location}</span>
             </div>
           </div>
         </header>
