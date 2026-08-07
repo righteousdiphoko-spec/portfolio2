@@ -37,7 +37,7 @@ export const HeroSection = () => {
             {/* Main Headline */}
             <div className="space-y-2 flex flex-col sm:flex-row sm:items-center sm:gap-6">
               <img
-                src="/images/profile.jpg"
+                src="/images/picture.JPEG"
                 alt={`${personalDetails.fullName} profile`}
                 className="w-28 h-28 rounded-full object-cover border border-slate-200 dark:border-slate-800 shadow-lg"
               />
