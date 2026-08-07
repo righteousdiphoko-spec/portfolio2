@@ -35,19 +35,16 @@ export const HeroSection = () => {
             </div>
 
             {/* Main Headline */}
-            <div className="space-y-2 flex flex-col sm:flex-row sm:items-center sm:gap-6">
-              <img
-                src="/images/picture.JPEG"
-                alt={`${personalDetails.fullName} profile`}
-                className="w-28 h-28 rounded-full object-cover border border-slate-200 dark:border-slate-800 shadow-lg"
-              />
-              <div>
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-slate-900 dark:text-slate-100 leading-[1.1]">
-                  Hi, I&apos;m <span className="text-indigo-600 dark:text-indigo-400">{personalDetails.fullName}</span>.
-                </h1>
-                <div className="text-2xl sm:text-3xl lg:text-4xl font-bold min-h-[50px] flex items-center">
-                  <TypingHeader />
-                </div>
+            <div className="space-y-2">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-slate-900 dark:text-slate-100 leading-[1.1]">
+                <img
+                  src="/images/picture.JPEG"
+                  alt="picture.JPEG"
+                  className="w-28 h-28 rounded-full object-cover border border-slate-200 dark:border-slate-800 shadow-lg"
+                />
+              </h1>
+              <div className="text-2xl sm:text-3xl lg:text-4xl font-bold min-h-[50px] flex items-center">
+                <TypingHeader />
               </div>
             </div>
 
