@@ -55,8 +55,9 @@ export const Footer = () => {
               ].map((item) => (
                 <li key={item.id}>
                   <button
+                    type="button"
                     onClick={() => scrollToSection(item.id)}
-                    className="text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+                    className="text-left text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
                   >
                     {item.label}
                   </button>
@@ -107,6 +108,7 @@ export const Footer = () => {
           </div>
           <div className="flex items-center gap-4">
             <button
+              type="button"
               onClick={handleScrollTop}
               className="flex items-center gap-1.5 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors cursor-pointer"
             >

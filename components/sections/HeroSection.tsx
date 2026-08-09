@@ -36,16 +36,19 @@ export const HeroSection = () => {
             </div>
 
             {/* Main Headline */}
-            <div className="space-y-2">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-slate-900 dark:text-slate-100 leading-[1.1]">
-                <img
-                  src="/images/picture.JPEG"
-                  alt="picture.JPEG"
-                  className="w-28 h-28 rounded-full object-cover border border-slate-200 dark:border-slate-800 shadow-lg"
-                />
-              </h1>
-              <div className="text-2xl sm:text-3xl lg:text-4xl font-bold min-h-[50px] flex items-center">
-                <TypingHeader />
+            <div className="flex items-center gap-4 sm:gap-5">
+              <img
+                src="/images/picture.JPEG"
+                alt="Tshiamo Diphoko portrait"
+                className="w-20 h-20 sm:w-24 sm:h-24 rounded-full object-cover border border-slate-200 dark:border-slate-800 shadow-lg shadow-indigo-500/10"
+              />
+              <div className="space-y-1">
+                <p className="text-[10px] sm:text-xs uppercase tracking-[0.24em] text-slate-500 dark:text-slate-400 font-semibold">
+                  Portfolio
+                </p>
+                <h1 className="text-2xl sm:text-3xl lg:text-4xl font-black tracking-tight text-slate-900 dark:text-slate-100 leading-tight">
+                  <TypingHeader />
+                </h1>
               </div>
             </div>
 
@@ -55,12 +58,12 @@ export const HeroSection = () => {
             </p>
 
             {/* Primary Action Buttons */}
-            <div className="flex flex-wrap items-center gap-4 pt-2">
+            <div className="flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center gap-3 pt-2">
               <Button
                 size="lg"
                 onClick={() => scrollToSection('projects')}
                 rightIcon={<ArrowRight className="w-4 h-4" />}
-                className="shadow-indigo-500/30"
+                className="shadow-indigo-500/30 w-full sm:w-auto"
               >
                 View Projects
               </Button>
@@ -69,7 +72,7 @@ export const HeroSection = () => {
                 href="/resume"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-2xl border border-slate-300 dark:border-slate-700 bg-transparent text-slate-800 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800/80 px-6 py-3.5 text-base font-medium transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2"
+                className="inline-flex items-center justify-center gap-2 rounded-2xl border border-slate-300 dark:border-slate-700 bg-transparent text-slate-800 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800/80 px-6 py-3.5 text-base font-medium transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 w-full sm:w-auto"
               >
                 <Download className="w-4 h-4 text-indigo-600 dark:text-indigo-400" />
                 Download CV
@@ -80,6 +83,7 @@ export const HeroSection = () => {
                 variant="ghost"
                 onClick={() => scrollToSection('contact')}
                 leftIcon={<Mail className="w-4 h-4 text-indigo-600 dark:text-indigo-400" />}
+                className="w-full sm:w-auto"
               >
                 Contact Me
               </Button>
