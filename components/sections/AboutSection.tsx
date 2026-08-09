@@ -9,7 +9,7 @@ import { motion } from 'framer-motion';
 
 export const AboutSection = () => {
   return (
-    <section id="about" className="py-20 md:py-28 bg-slate-50/50 dark:bg-slate-900/40 relative">
+    <section id="about" className="py-20 md:py-28 bg-slate-50/50 dark:bg-slate-900/40 relative scroll-mt-28">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}

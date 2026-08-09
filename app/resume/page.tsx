@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import Link from 'next/link';
 import { personalDetails, education, leadershipExperience, referencesData } from '@/data/resume';
 import { projectsData } from '@/data/projects';
@@ -9,6 +9,17 @@ import { ArrowLeft, Printer, Mail, Phone, MapPin } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from '@/components/ui/SocialIcons';
 
 export default function ResumePage() {
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('print') === '1') {
+      const timer = window.setTimeout(() => {
+        window.print();
+      }, 350);
+
+      return () => window.clearTimeout(timer);
+    }
+  }, []);
+
   const handlePrint = () => {
     window.print();
   };

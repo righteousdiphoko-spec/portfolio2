@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 import { personalDetails } from '@/data/resume';
 import { Button } from '@/components/ui/Button';
 import { TypingHeader } from '@/components/interactive/TypingHeader';
@@ -11,7 +12,7 @@ import { motion } from 'framer-motion';
 
 export const HeroSection = () => {
   return (
-    <section id="hero" className="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden bg-grid-pattern">
+    <section id="hero" className="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden bg-grid-pattern scroll-mt-28">
       {/* Background Glowing Gradient Orbs */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-indigo-500/15 dark:bg-indigo-600/20 blur-[120px] rounded-full pointer-events-none animate-pulse-glow" />
 
@@ -64,15 +65,15 @@ export const HeroSection = () => {
                 View Projects
               </Button>
 
-              <a href="/resume" target="_blank">
-                <Button
-                  size="lg"
-                  variant="outline"
-                  leftIcon={<Download className="w-4 h-4 text-indigo-600 dark:text-indigo-400" />}
-                >
-                  Download CV
-                </Button>
-              </a>
+              <Link
+                href="/resume"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 rounded-2xl border border-slate-300 dark:border-slate-700 bg-transparent text-slate-800 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800/80 px-6 py-3.5 text-base font-medium transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2"
+              >
+                <Download className="w-4 h-4 text-indigo-600 dark:text-indigo-400" />
+                Download CV
+              </Link>
 
               <Button
                 size="lg"

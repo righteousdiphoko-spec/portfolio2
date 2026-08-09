@@ -26,7 +26,7 @@ export const ProjectsSection = () => {
   };
 
   return (
-    <section id="projects" className="py-20 md:py-28 relative bg-slate-50/50 dark:bg-slate-900/40">
+    <section id="projects" className="py-20 md:py-28 relative bg-slate-50/50 dark:bg-slate-900/40 scroll-mt-28">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}

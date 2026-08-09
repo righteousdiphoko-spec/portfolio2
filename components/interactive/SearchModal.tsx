@@ -17,14 +17,15 @@ export const SearchModal = ({ isOpen, onClose }: SearchModalProps) => {
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
-        e.preventDefault();
-        isOpen ? onClose() : null;
+      if (e.key === 'Escape') {
+        onClose();
       }
-      if (e.key === 'Escape') onClose();
     };
 
-    window.addEventListener('keydown', handleKeyDown);
+    if (isOpen) {
+      window.addEventListener('keydown', handleKeyDown);
+    }
+
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [isOpen, onClose]);
 

@@ -21,7 +21,7 @@ export const Navbar = () => {
       setIsScrolled(window.scrollY > 20);
 
       const sections = ['hero', 'about', 'skills', 'projects', 'resume', 'contact'];
-      const scrollPosition = window.scrollY + 100;
+      const scrollPosition = window.scrollY + 140;
 
       for (const section of sections) {
         const el = document.getElementById(section);
@@ -36,8 +36,26 @@ export const Navbar = () => {
       }
     };
 
+    const handleKeyboardShortcuts = (event: KeyboardEvent) => {
+      if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === 'k') {
+        event.preventDefault();
+        setIsSearchOpen((open) => !open);
+      }
+
+      if (event.key === 'Escape') {
+        setIsSearchOpen(false);
+        setIsMobileMenuOpen(false);
+      }
+    };
+
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener('keydown', handleKeyboardShortcuts);
+    handleScroll();
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('keydown', handleKeyboardShortcuts);
+    };
   }, []);
 
   const navItems = [
