@@ -7,6 +7,7 @@ import { projectsData } from '@/data/projects';
 import { Button } from '@/components/ui/Button';
 import { ArrowLeft, Printer, Mail, Phone, MapPin } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from '@/components/ui/SocialIcons';
+import { basePath } from '@/lib/utils';
 
 export default function ResumePage() {
   useEffect(() => {
@@ -52,7 +53,7 @@ export default function ResumePage() {
                 {personalDetails.fullName}
               </h1>
               <img
-                src="/images/picture.JPEG"
+                src={`${basePath}/images/picture.JPEG`}
                 alt={`${personalDetails.fullName} profile`}
                 className="w-20 h-20 rounded-full object-cover border border-slate-200 dark:border-slate-800 shadow-sm"
               />

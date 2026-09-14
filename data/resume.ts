@@ -17,7 +17,7 @@ export const education: EducationItem = {
   degree: 'Specialisation in Informatics',
   institution: 'University / Higher Education Institution',
   period: '2022 – 2025',
-  completionDate: 'June 2025',
+  completionDate: 'Current',
   status: 'Candidate (Specialisation in Informatics)',
   courses: [
     'System Analysis',
@@ -209,12 +209,12 @@ export const referencesData: ReferenceItem[] = [
     name: 'Jack Sibanyoni',
     phone: '072 042 7654',
     title: 'Academic / Professional Reference',
-    relation: 'Informatics Supervisor & Mentor'
+    relation: 'Directorate of Extracurricular Development Leader'
   },
   {
     name: 'Hezekiel Mshitiseng Mashego',
     phone: '077 428 1889',
     title: 'Directorate Reference',
-    relation: 'Directorate of Extracurricular Development Lead'
+    relation: 'Lecturer'
   }
 ];

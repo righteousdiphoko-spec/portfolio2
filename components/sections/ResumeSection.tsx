@@ -5,18 +5,16 @@ import { personalDetails, education, leadershipExperience, referencesData, skill
 import { Card } from '@/components/ui/Card';
 import { Badge } from '@/components/ui/Badge';
 import { Button } from '@/components/ui/Button';
+import { basePath } from '@/lib/utils';
 import { Download, Printer, ExternalLink, FileText, Phone, Mail, UserCheck, GraduationCap, Briefcase } from 'lucide-react';
 
 export const ResumeSection = () => {
   const handlePrint = () => {
-    const printWindow = window.open('/resume?print=1', '_blank', 'noopener,noreferrer');
-    if (printWindow) {
-      printWindow.focus();
-    }
+    window.open(`${basePath}/resume`, '_blank');
   };
 
   return (
-    <section id="resume" className="py-20 md:py-28 relative bg-white dark:bg-slate-950 scroll-mt-28">
+    <section id="resume" className="py-20 md:py-28 relative bg-white dark:bg-slate-950">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
@@ -41,14 +39,14 @@ export const ResumeSection = () => {
             >
               Print / Export PDF CV
             </Button>
-            <a
-              href="/resume"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-300 dark:border-slate-700 bg-transparent px-4 py-2.5 text-sm font-medium text-slate-800 dark:text-slate-200 transition-all duration-200 hover:bg-slate-100 dark:hover:bg-slate-800/80 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2"
-            >
-              <ExternalLink className="w-4 h-4 text-indigo-600 dark:text-indigo-400" />
-              View Printable Layout
+            <a href={`${basePath}/resume`} target="_blank">
+              <Button
+                size="md"
+                variant="outline"
+                leftIcon={<ExternalLink className="w-4 h-4 text-indigo-600 dark:text-indigo-400" />}
+              >
+                View Printable Layout
+              </Button>
             </a>
           </div>
         </div>

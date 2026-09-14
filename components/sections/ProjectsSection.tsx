@@ -61,13 +61,25 @@ export const ProjectsSection = () => {
 
         {/* Projects Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {filteredProjects.map((project) => (
-            <ProjectCard
-              key={project.id}
-              project={project}
-              onOpenModal={handleOpenModal}
-            />
-          ))}
+          {filteredProjects.length > 0 ? (
+            filteredProjects.map((project) => (
+              <ProjectCard
+                key={project.id}
+                project={project}
+                onOpenModal={handleOpenModal}
+              />
+            ))
+          ) : (
+            <div className="md:col-span-2 rounded-2xl border border-dashed border-slate-300 dark:border-slate-700 bg-white/70 dark:bg-slate-900/60 px-6 py-12 text-center">
+              <FolderCode className="mx-auto mb-4 h-10 w-10 text-indigo-500" />
+              <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100">
+                Projects coming soon
+              </h3>
+              <p className="mx-auto mt-2 max-w-lg text-sm text-slate-600 dark:text-slate-400">
+                New case studies will appear here as they are added to the projects data.
+              </p>
+            </div>
+          )}
         </div>
 
       </div>

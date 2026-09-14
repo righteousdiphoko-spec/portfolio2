@@ -1,221 +1,126 @@
 'use client';
 
 import React from 'react';
-import Link from 'next/link';
 import { personalDetails } from '@/data/resume';
 import { Button } from '@/components/ui/Button';
 import { TypingHeader } from '@/components/interactive/TypingHeader';
-import { scrollToSection } from '@/lib/utils';
-import { ArrowRight, Download, Mail, Terminal, CheckCircle2, Code2, Database } from 'lucide-react';
+import { scrollToSection, basePath } from '@/lib/utils';
+import { ArrowRight, Download, Mail, Sparkles } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from '@/components/ui/SocialIcons';
 import { motion } from 'framer-motion';
 
 export const HeroSection = () => {
   return (
-    <section id="hero" className="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden bg-grid-pattern scroll-mt-28">
-      {/* Background Glowing Gradient Orbs */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-indigo-500/15 dark:bg-indigo-600/20 blur-[120px] rounded-full pointer-events-none animate-pulse-glow" />
+    <section id="hero" className="relative overflow-hidden bg-white text-slate-900">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_45%,rgba(79,70,229,0.10),transparent_28%),linear-gradient(135deg,#ffffff_0%,#f8fafc_100%)]" />
+      <div className="absolute inset-x-0 bottom-0 h-px bg-indigo-200" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          
-          {/* Main Hero Copy (Left 7 Cols) */}
+      <div className="relative mx-auto max-w-7xl px-5 pb-20 pt-32 sm:px-8 md:pb-28 md:pt-40 lg:px-10">
+        <div className="grid items-center gap-14 lg:grid-cols-[1.15fr_0.85fr] lg:gap-20">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="lg:col-span-7 space-y-6 text-left"
+            transition={{ duration: 0.65 }}
+            className="max-w-2xl"
           >
-            {/* Status Pulse Badge */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-indigo-50 dark:bg-indigo-950/60 border border-indigo-200 dark:border-indigo-800/80 text-indigo-700 dark:text-indigo-300 text-xs font-semibold shadow-xs">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
-              </span>
-              <span>Available for Junior & Internship Software Engineering Roles</span>
+            <div className="mb-6 inline-flex items-center gap-2 rounded-md bg-indigo-600 px-4 py-2 text-xs font-bold uppercase tracking-wide text-white shadow-lg shadow-indigo-500/20">
+              <Sparkles className="h-3.5 w-3.5" />
+              Informatics & Full-Stack Developer
             </div>
 
-            {/* Main Headline */}
-            <div className="flex items-center gap-4 sm:gap-5">
-              <img
-                src="/images/picture.JPEG"
-                alt="Tshiamo Diphoko portrait"
-                className="w-20 h-20 sm:w-24 sm:h-24 rounded-full object-cover border border-slate-200 dark:border-slate-800 shadow-lg shadow-indigo-500/10"
-              />
-              <div className="space-y-1">
-                <p className="text-[10px] sm:text-xs uppercase tracking-[0.24em] text-slate-500 dark:text-slate-400 font-semibold">
-                  Portfolio
-                </p>
-                <h1 className="text-2xl sm:text-3xl lg:text-4xl font-black tracking-tight text-slate-900 dark:text-slate-100 leading-tight">
-                  <TypingHeader />
-                </h1>
-              </div>
+            <h1 className="text-5xl font-black leading-[0.98] tracking-tight sm:text-6xl lg:text-7xl">
+              Hi, I&apos;m <span className="text-indigo-600">{personalDetails.fullName}</span>
+            </h1>
+
+            <div className="mt-8 min-h-12 text-2xl font-bold text-indigo-600 sm:text-3xl">
+              <TypingHeader />
             </div>
 
-            {/* Concise Summary */}
-            <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed max-w-2xl">
-              Informatics specialist and full-stack software developer with strong software engineering fundamentals. Skilled in connecting complex user requirements with clean, scalable web applications, system analysis, and responsive frontend design.
+            <p className="mt-8 max-w-xl text-base leading-7 text-slate-600 sm:text-lg">
+              {personalDetails.bio}
             </p>
 
-            {/* Primary Action Buttons */}
-            <div className="flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center gap-3 pt-2">
+            <div className="mt-9 flex flex-wrap gap-3">
+              {['React & Next.js', 'TypeScript', 'System Analysis', 'Responsive UI'].map((item) => (
+                <span
+                  key={item}
+                  className="rounded-full border border-indigo-300 px-4 py-2 text-xs font-semibold text-indigo-600"
+                >
+                  {item}
+                </span>
+              ))}
+            </div>
+
+            <div className="mt-10 flex flex-wrap items-center gap-4">
               <Button
                 size="lg"
                 onClick={() => scrollToSection('projects')}
-                rightIcon={<ArrowRight className="w-4 h-4" />}
-                className="shadow-indigo-500/30 w-full sm:w-auto"
+                rightIcon={<ArrowRight className="h-4 w-4" />}
+                className="bg-indigo-600 text-white shadow-indigo-500/30 hover:bg-indigo-700"
               >
-                View Projects
+                Explore Projects
               </Button>
-
-              <Link
-                href="/resume"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-2xl border border-slate-300 dark:border-slate-700 bg-transparent text-slate-800 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800/80 px-6 py-3.5 text-base font-medium transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 w-full sm:w-auto"
-              >
-                <Download className="w-4 h-4 text-indigo-600 dark:text-indigo-400" />
-                Download CV
-              </Link>
-
-              <Button
-                size="lg"
-                variant="ghost"
-                onClick={() => scrollToSection('contact')}
-                leftIcon={<Mail className="w-4 h-4 text-indigo-600 dark:text-indigo-400" />}
-                className="w-full sm:w-auto"
-              >
-                Contact Me
-              </Button>
+              <a href={`${basePath}/resume`} target="_blank" rel="noreferrer">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  leftIcon={<Download className="h-4 w-4" />}
+                  className="border-indigo-300 text-indigo-600 hover:bg-indigo-50 hover:text-indigo-700"
+                >
+                  Download CV
+                </Button>
+              </a>
             </div>
 
-            {/* Social Links & Highlights */}
-            <div className="pt-6 border-t border-slate-200/80 dark:border-slate-800/80 flex flex-wrap items-center gap-6 text-sm text-slate-600 dark:text-slate-400">
-              <div className="flex items-center gap-3">
+            <div className="mt-10 flex items-center gap-3">
+              {[
+                { label: 'GitHub Profile', href: personalDetails.github, icon: <GithubIcon className="h-5 w-5" /> },
+                { label: 'LinkedIn Profile', href: personalDetails.linkedin, icon: <LinkedinIcon className="h-5 w-5" /> },
+                { label: 'Email', href: `mailto:${personalDetails.email}`, icon: <Mail className="h-5 w-5" /> }
+              ].map((social) => (
                 <a
-                  href={personalDetails.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="GitHub Profile"
-                  className="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-900 hover:bg-indigo-50 dark:hover:bg-indigo-950 text-slate-700 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors border border-slate-200 dark:border-slate-800"
+                  key={social.label}
+                  href={social.href}
+                  target={social.href.startsWith('mailto:') ? undefined : '_blank'}
+                  rel={social.href.startsWith('mailto:') ? undefined : 'noreferrer'}
+                  aria-label={social.label}
+                  className="rounded-full border border-slate-300 p-2.5 text-slate-600 transition-colors hover:border-indigo-500 hover:bg-indigo-600 hover:text-white"
                 >
-                  <GithubIcon className="w-5 h-5" />
+                  {social.icon}
                 </a>
-                <a
-                  href={personalDetails.linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="LinkedIn Profile"
-                  className="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-900 hover:bg-indigo-50 dark:hover:bg-indigo-950 text-slate-700 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors border border-slate-200 dark:border-slate-800"
-                >
-                  <LinkedinIcon className="w-5 h-5" />
-                </a>
-                <a
-                  href={`mailto:${personalDetails.email}`}
-                  aria-label="Send Email"
-                  className="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-900 hover:bg-indigo-50 dark:hover:bg-indigo-950 text-slate-700 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors border border-slate-200 dark:border-slate-800"
-                >
-                  <Mail className="w-5 h-5" />
-                </a>
-              </div>
-
-              <div className="hidden sm:flex items-center gap-4 text-xs font-medium text-slate-500 dark:text-slate-400">
-                <span className="flex items-center gap-1.5">
-                  <CheckCircle2 className="w-4 h-4 text-indigo-500" /> Informatics & System Analysis
-                </span>
-                <span className="flex items-center gap-1.5">
-                  <CheckCircle2 className="w-4 h-4 text-indigo-500" /> Full-Stack Architecture
-                </span>
-              </div>
+              ))}
             </div>
           </motion.div>
 
-          {/* Interactive Visual Card (Right 5 Cols) */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
+            initial={{ opacity: 0, scale: 0.92 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="lg:col-span-5 relative"
+            transition={{ duration: 0.7, delay: 0.15 }}
+            className="flex flex-col items-center lg:items-end"
           >
-            {/* Main Code & Architecture Display Card */}
-            <div className="relative glass-card bg-slate-900 text-slate-100 dark:bg-slate-950 rounded-3xl p-6 shadow-2xl border border-slate-800 space-y-4 font-mono text-xs">
-              
-              {/* Card Window Bar */}
-              <div className="flex items-center justify-between pb-3 border-b border-slate-800">
-                <div className="flex items-center gap-2">
-                  <span className="w-3 h-3 rounded-full bg-rose-500/80 inline-block" />
-                  <span className="w-3 h-3 rounded-full bg-amber-500/80 inline-block" />
-                  <span className="w-3 h-3 rounded-full bg-emerald-500/80 inline-block" />
-                </div>
-                <div className="text-[11px] text-slate-400 font-sans flex items-center gap-1.5">
-                  <Terminal className="w-3.5 h-3.5 text-indigo-400" /> developer-profile.ts
-                </div>
-              </div>
+            <div className="relative">
+              <div className="absolute -inset-4 rounded-full border border-indigo-300/60" />
+              <div className="absolute -inset-8 rounded-full border border-indigo-200/40" />
+              <img
+                src={`${basePath}/images/picture.JPEG`}
+                alt={personalDetails.fullName}
+                className="relative h-64 w-64 rounded-full border-4 border-indigo-500/70 object-cover shadow-2xl shadow-indigo-500/10 sm:h-80 sm:w-80"
+              />
+            </div>
 
-              {/* Code Snippet */}
-              <div className="space-y-2 text-slate-300 leading-relaxed">
-                <div>
-                  <span className="text-purple-400">interface</span>{' '}
-                  <span className="text-yellow-300">Developer</span> &#123;
+            <div className="mt-16 grid w-full max-w-lg grid-cols-3 gap-3">
+              {[
+                { value: '10+', label: 'Core Skills' },
+                { value: 'Intern', label: '' },
+                { value: '∞', label: 'Curiosity' }
+              ].map((stat) => (
+                <div key={stat.label} className="rounded-2xl bg-white px-3 py-5 text-center shadow-sm ring-1 ring-slate-200">
+                  <div className="text-3xl font-black text-indigo-600">{stat.value}</div>
+                  <div className="mt-1 text-xs font-bold text-slate-600">{stat.label}</div>
                 </div>
-                <div className="pl-4">
-                  name: <span className="text-emerald-300">&apos;Tshiamo Diphoko&apos;</span>;
-                </div>
-                <div className="pl-4">
-                  degree: <span className="text-emerald-300">&apos;Specialisation in Informatics&apos;</span>;
-                </div>
-                <div className="pl-4">
-                  stack: [<span className="text-emerald-300">&apos;React&apos;</span>, <span className="text-emerald-300">&apos;Next.js&apos;</span>, <span className="text-emerald-300">&apos;TypeScript&apos;</span>, <span className="text-emerald-300">&apos;Node.js&apos;</span>];
-                </div>
-                <div className="pl-4">
-                  competencies: [<span className="text-emerald-300">&apos;System Analysis&apos;</span>, <span className="text-emerald-300">&apos;Testing&apos;</span>, <span className="text-emerald-300">&apos;DBMS&apos;</span>];
-                </div>
-                <div className="pl-4">
-                  seeking: <span className="text-indigo-400">&apos;Junior & Internship Roles&apos;</span>;
-                </div>
-                <div>&#125;</div>
-                <div className="pt-2 text-slate-500">
-                  // Enterprise architecture & clean code implementation
-                </div>
-                <div>
-                  <span className="text-indigo-400">export default</span>{' '}
-                  <span className="text-purple-400">new</span>{' '}
-                  <span className="text-yellow-300">SoftwareEngineer</span>();
-                </div>
-              </div>
-
-              {/* Floating Pill Badges */}
-              <motion.div
-                animate={{ y: [0, -6, 0] }}
-                transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-                className="absolute -top-4 -right-4 glass-card bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-3 rounded-2xl shadow-xl flex items-center gap-2.5 text-slate-900 dark:text-slate-100 font-sans"
-              >
-                <div className="p-2 rounded-xl bg-indigo-100 dark:bg-indigo-950 text-indigo-600 dark:text-indigo-400">
-                  <Code2 className="w-4 h-4" />
-                </div>
-                <div>
-                  <div className="text-xs font-bold">React & Next.js</div>
-                  <div className="text-[10px] text-slate-500">App Router & TypeScript</div>
-                </div>
-              </motion.div>
-
-              <motion.div
-                animate={{ y: [0, 6, 0] }}
-                transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
-                className="absolute -bottom-5 -left-4 glass-card bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-3 rounded-2xl shadow-xl flex items-center gap-2.5 text-slate-900 dark:text-slate-100 font-sans"
-              >
-                <div className="p-2 rounded-xl bg-purple-100 dark:bg-purple-950 text-purple-600 dark:text-purple-400">
-                  <Database className="w-4 h-4" />
-                </div>
-                <div>
-                  <div className="text-xs font-bold">System Analysis</div>
-                  <div className="text-[10px] text-slate-500">Requirements & Testing</div>
-                </div>
-              </motion.div>
-
+              ))}
             </div>
           </motion.div>
-
         </div>
       </div>
     </section>

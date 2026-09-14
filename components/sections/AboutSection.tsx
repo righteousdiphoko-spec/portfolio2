@@ -20,9 +20,33 @@ export const AboutSection = () => {
           <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-slate-100 tracking-tight">
             Connecting User Needs with <span className="text-indigo-600 dark:text-indigo-400">Robust Engineering</span>
           </h2>
-          <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400 leading-relaxed">
-            Bridging the gap between business requirements, software architecture, frontend elegance, and quality assurance to build software that users love.
-          </p>
+          <div className="space-y-4 text-left text-sm leading-relaxed text-slate-600 dark:text-slate-400 sm:text-base">
+            <p>
+              I&apos;m a Software Developer Intern focused on building my skills in{' '}
+              <strong className="font-semibold text-slate-900 dark:text-slate-100">
+                full-stack development, AI-assisted development, and modern web technologies
+              </strong>
+              . During my internship, I&apos;ve gained hands-on experience with{' '}
+              <strong className="font-semibold text-slate-900 dark:text-slate-100">
+                Next.js, Tailwind CSS, Node.js, PostgreSQL, Git, GitHub, Vercel, and Render
+              </strong>
+              .
+            </p>
+            <p>
+              I&apos;ve worked on projects involving{' '}
+              <strong className="font-semibold text-slate-900 dark:text-slate-100">
+                personal portfolio development, frontend and backend authentication, database integration, responsive UI design, and deployment
+              </strong>
+              . I&apos;ve also learned how to use AI effectively throughout the development process, from writing structured prompts and generating solutions to reviewing, debugging, and understanding the code.
+            </p>
+            <p>
+              My internship has taught me to think beyond just writing code:{' '}
+              <strong className="font-semibold text-slate-900 dark:text-slate-100">
+                understand the problem, plan the solution, build it, test and debug it, secure it, and deploy it
+              </strong>
+              .
+            </p>
+          </div>
         </div>
 
         {/* 4 Pillars Grid */}

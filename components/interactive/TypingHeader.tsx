@@ -37,9 +37,9 @@ export const TypingHeader = () => {
   }, [currentText, isDeleting, currentWordIndex]);
 
   return (
-    <span className="inline-block font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 via-indigo-500 to-indigo-400 dark:from-indigo-400 dark:via-indigo-300 dark:to-indigo-500">
+    <span className="inline-block font-extrabold text-indigo-600">
       {currentText}
-      <span className="inline-block w-1 h-[0.85em] bg-indigo-600 dark:bg-indigo-400 ml-1 translate-y-1 animate-blink" />
+      <span className="ml-1 inline-block h-[0.85em] w-1 translate-y-1 animate-blink bg-indigo-600" />
     </span>
   );
 };
